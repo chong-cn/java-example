@@ -8,17 +8,17 @@ package com.java.example.design.singleton;
  * 缺点：synchronized导致效率下降，单线程情况下可去掉synchronized
  *
  */
-public class SingletonLazy {
+public class LazyExample {
 
-    private static volatile SingletonLazy instance;
+    private static volatile LazyExample instance;
 
-    private SingletonLazy() {
+    private LazyExample() {
 
     }
 
-    public static synchronized SingletonLazy getInstance() {
+    public static synchronized LazyExample getInstance() {
         if (null == instance) {
-            instance = new SingletonLazy();
+            instance = new LazyExample();
         }
 
         return instance;

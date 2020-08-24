@@ -8,15 +8,15 @@ package com.java.example.design.singleton;
  * 缺点：无法延迟创建对象
  *
  */
-public class SingletonHungry {
+public class HungryExample {
 
-    private static SingletonHungry instance = new SingletonHungry();
+    private static HungryExample instance = new HungryExample();
 
-    private SingletonHungry() {
+    private HungryExample() {
 
     }
 
-    public static SingletonHungry getInstance() {
+    public static HungryExample getInstance() {
         return instance;
     }
 

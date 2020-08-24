@@ -3,7 +3,7 @@ package com.java.example.design.singleton;
 /**
  * 枚举实现单例模式
  */
-public enum SingletonEnum {
+public enum EnumExample {
 
     INSTANCE;
 

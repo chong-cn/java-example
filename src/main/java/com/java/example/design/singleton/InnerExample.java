@@ -6,17 +6,17 @@ package com.java.example.design.singleton;
  * 实现：内部类中创建实例对象，因为静态内部类只会被家在一次
  *
  */
-public class SingletonInner {
+public class InnerExample {
 
     private static class Holder {
-        private static SingletonInner singleton = new SingletonInner();
+        private static InnerExample singleton = new InnerExample();
     }
 
-    private SingletonInner () {
+    private InnerExample() {
 
     }
 
-    public static SingletonInner getInstance() {
+    public static InnerExample getInstance() {
         return Holder.singleton;
     }
 

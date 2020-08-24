@@ -34,7 +34,8 @@ public class MD5Util {
     private static String bytesToHex(byte[] md5Array) {
         StringBuilder strBuilder = new StringBuilder();
         for (int i = 0; i < md5Array.length; i++) {
-            int temp = 0xff & md5Array[i];//TODO:此处为什么添加 0xff & ？
+            // TODO 此处为什么添加 0xff & ？
+            int temp = 0xff & md5Array[i];
             String hexString = Integer.toHexString(temp);
             if (hexString.length() == 1) {//如果是十六进制的0f，默认只显示f，此时要补上0
                 strBuilder.append("0").append(hexString);
