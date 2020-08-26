@@ -53,23 +53,22 @@ public class DesensitizationUtil {
      * @Date: 2020-08-26
      */
     public static String desensitizationName(String name) {
+
         String newName = "";
         if (name == null || name.isEmpty()) {
             return newName;
         }
         int nameLen = name.length();
-        if (name.length() == 2) {
-            newName = name.substring(0, 1) + "*";
+        if (name.length() <= 2) {
+            newName = "* " + name.substring(nameLen - 1, nameLen);
         }
-        if (name.length() == 3) {
-            newName = name.substring(0, 1) + "*"  + name.substring(1, 2);
-        }
-        if (name.length() > 3) {
-            newName = name.substring(0, 2) + "**"  + name.substring(nameLen - 2, nameLen -1);
+        if (name.length() >= 3) {
+            newName = name.substring(0, 1) + " * "  + name.substring(nameLen - 2, nameLen - 1);
         }
 
         return newName;
     }
+
 
     /**
      * 身份证脱敏
@@ -81,7 +80,7 @@ public class DesensitizationUtil {
         if (StringUtils.isBlank(cardNum)) {
             return "";
         }
-        return cardNum.replaceAll("(?<=\\w{3})\\w(?=\\w{4})", "*");
+        return cardNum.replaceAll("(?<=\\w{3})\\w(?=\\w{3})", "*");
     }
 
     /**
@@ -91,25 +90,33 @@ public class DesensitizationUtil {
      * @Date: 2020-08-26
      */
     public static String desensitizationPassport(String cardNum) {
+        String newCardNum = "";
         if (StringUtils.isBlank(cardNum)) {
-            return "";
+            return newCardNum ;
         }
-        return cardNum.substring(0, 2) + new String(new char[cardNum.length() - 5]).replace("\0", "*") + cardNum.substring(cardNum.length() - 3);
-
+        int len = cardNum.length();
+        if (len >= 3 && len <= 6) {
+            newCardNum = "***" + cardNum.substring(len-3, len);
+        } else if (len > 6){
+            newCardNum = cardNum.substring(0, 3) + new String(new char[cardNum.length() - 5]).replace("\0", "*") + cardNum.substring(cardNum.length() - 3);
+        } else {
+            newCardNum = cardNum;
+        }
+        return newCardNum;
     }
 
 
     public static void main(String[] args) {
-        String name = "Weda";
-        String newName = desensitizationName(name);
-        System.out.println("newName: " + newName);
+//        String name = "ae";
+//        String newName = desensitizationName(name);
+//        System.out.println("newName: " + newName);
 //
-//        String cardNum = "410523199005257577";
-//        String passport = "D1234567";
-//        cardNum = desensitizationCard(cardNum);
-//        System.out.println("cardNum: " + cardNum);
-//        passport = desensitizationPassport(passport);
-//        System.out.println("passport: " + passport);
+        String cardNum = "410523199005257577x";
+        String passport = "1234567";
+        cardNum = desensitizationCard(cardNum);
+        System.out.println("cardNum: " + cardNum);
+        passport = desensitizationPassport(passport);
+        System.out.println("passport: " + passport);
 
 
     }
