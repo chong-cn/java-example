@@ -1,7 +1,5 @@
 package com.java.example.lambda;
 
-import org.apache.poi.ss.formula.functions.T;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -28,7 +26,7 @@ import java.util.function.Supplier;
  * Predicat<T c> : 断言型接口
  * boolean test(T t);
  */
-public class FunctionInterfaceExample {
+public class FunInterfaceExample {
 
     /**
      * Consumer<T> : 消费型接口
