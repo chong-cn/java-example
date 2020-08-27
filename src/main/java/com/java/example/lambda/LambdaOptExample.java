@@ -2,10 +2,7 @@ package com.java.example.lambda;
 
 import com.java.example.model.PersonModel;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.LongSummaryStatistics;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -71,9 +68,7 @@ public class LambdaOptExample {
          * 方式三： 集合比较的简写方式
          *
          */
-        list.sort((o1, o2) -> {
-            return o1.getAge() - o2.getAge();
-        });
+        list.sort(Comparator.comparingInt(PersonModel::getAge));
     }
 
 }
