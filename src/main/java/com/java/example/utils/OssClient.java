@@ -1,4 +1,4 @@
-package com.java.example.collection;
+package com.java.example.utils;
 
 import com.alibaba.fastjson.JSONObject;
 import com.aliyun.oss.ClientConfiguration;

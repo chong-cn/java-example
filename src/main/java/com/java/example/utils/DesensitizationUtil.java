@@ -63,7 +63,7 @@ public class DesensitizationUtil {
             newName = "* " + name.substring(nameLen - 1, nameLen);
         }
         if (name.length() >= 3) {
-            newName = name.substring(0, 1) + " * "  + name.substring(nameLen - 2, nameLen - 1);
+            newName = name.substring(0, 1) + " * " + name.substring(nameLen - 1, nameLen);
         }
 
         return newName;
@@ -92,12 +92,12 @@ public class DesensitizationUtil {
     public static String desensitizationPassport(String cardNum) {
         String newCardNum = "";
         if (StringUtils.isBlank(cardNum)) {
-            return newCardNum ;
+            return newCardNum;
         }
         int len = cardNum.length();
         if (len >= 3 && len <= 6) {
-            newCardNum = "***" + cardNum.substring(len-3, len);
-        } else if (len > 6){
+            newCardNum = "***" + cardNum.substring(len - 3, len);
+        } else if (len > 6) {
             newCardNum = cardNum.substring(0, 3) + new String(new char[cardNum.length() - 5]).replace("\0", "*") + cardNum.substring(cardNum.length() - 3);
         } else {
             newCardNum = cardNum;
@@ -107,16 +107,16 @@ public class DesensitizationUtil {
 
 
     public static void main(String[] args) {
-//        String name = "ae";
-//        String newName = desensitizationName(name);
-//        System.out.println("newName: " + newName);
-//
-        String cardNum = "410523199005257577x";
-        String passport = "1234567";
-        cardNum = desensitizationCard(cardNum);
-        System.out.println("cardNum: " + cardNum);
-        passport = desensitizationPassport(passport);
-        System.out.println("passport: " + passport);
+        String name = "aeklasldjfla";
+        String newName = desensitizationName(name);
+        System.out.println("newName: " + newName);
+
+//        String cardNum = "410523199005257577x";
+//        String passport = "1234567";
+//        cardNum = desensitizationCard(cardNum);
+//        System.out.println("cardNum: " + cardNum);
+//        passport = desensitizationPassport(passport);
+//        System.out.println("passport: " + passport);
 
 
     }
