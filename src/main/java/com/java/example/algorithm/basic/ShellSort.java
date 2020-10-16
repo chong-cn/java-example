@@ -1,4 +1,4 @@
-package com.java.example.algorithm.eight;
+package com.java.example.algorithm.basic;
 
 import java.util.Arrays;
 

@@ -6,6 +6,12 @@ import java.util.List;
 
 public class ListExample {
 
+    /**
+     * list截取字符串
+     *
+     * @return:
+     * @Date: 2020-09-29
+     */
     public static void subListTest() {
         List<Integer> insertList = new ArrayList<>();
 

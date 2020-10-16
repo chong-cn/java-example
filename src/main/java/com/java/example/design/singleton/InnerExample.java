@@ -2,9 +2,10 @@ package com.java.example.design.singleton;
 
 /**
  * 静态内部类单例模式(线程安全)
- *
- * 实现：内部类中创建实例对象，因为静态内部类只会被家在一次
- *
+ * <p>
+ * 实现：内部类中创建实例对象，因为静态内部类只会被加载一次
+ * <p>
+ * 推荐使用✨
  */
 public class InnerExample {
 

@@ -1,7 +1,5 @@
 package com.java.example.lambda;
 
-import com.java.example.model.PersonModel;
-
 import java.util.*;
 import java.util.stream.Collectors;
 

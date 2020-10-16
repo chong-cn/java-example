@@ -1,7 +1,7 @@
 package com.java.example.design.singleton;
 
 /**
- * 枚举实现单例模式
+ * 枚举实现单例模式，无法实现懒加载
  */
 public enum EnumExample {
 
